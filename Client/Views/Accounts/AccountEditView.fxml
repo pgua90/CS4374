@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="754.0" prefWidth="1117.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+  <center>
+    <TabPane prefHeight="781.0" prefWidth="1117.0" tabClosingPolicy="UNAVAILABLE" BorderPane.alignment="TOP_CENTER">
+      <tabs>
+        <Tab fx:id="ticketTab" text="Tickets">
+          <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="673.0" prefWidth="1117.0">
+              <children>
+                <BorderPane prefHeight="672.0" prefWidth="1117.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <center>
+                    <Pane fx:id="ticketDescriptionPane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                      <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="665.0" prefWidth="917.0">
+                        <children>
+                          <Label id="AccountLabel" fx:id="AccountLabelName" layoutY="27.0" text="Name:" AnchorPane.leftAnchor="9.0" />
+                          <Label id="AccountLabel" fx:id="AccountLabelRole" layoutY="67.0" text="User Role:" AnchorPane.leftAnchor="9.0" />
+                          <Label id="AccountLabel" fx:id="AccountLabelID" layoutY="107.0" text="ID:" AnchorPane.leftAnchor="9.0" />
+                          <Label id="AccountLabel" fx:id="AccountLabelEmail" layoutY="147.0" text="Email:" AnchorPane.leftAnchor="9.0" />
+                          <Label id="AccountLabel" fx:id="AccountLabelPhone" layoutY="187.0" text="Phone Number:" AnchorPane.leftAnchor="9.0" />
+                          <Label id="AccountLabel" fx:id="AccountLabelUsername" layoutY="227.0" text="Username:" AnchorPane.leftAnchor="9.0" />
+                          <Label id="AccountLabel" fx:id="AccountLabelPassword" layoutY="267.0" text="Password:" AnchorPane.leftAnchor="9.0" />
+                          <TextField id="AccountEdit" fx:id="AccountEditName" promptText="Name" text="" AnchorPane.leftAnchor="119.0" AnchorPane.topAnchor="24.0" />
+                          <TextField id="AccountEdit" fx:id="AccountEditRole" promptText="User Role" text="" AnchorPane.leftAnchor="119.0" AnchorPane.topAnchor="64.0" />
+                          <TextField id="AccountEdit" fx:id="AccountEditID" promptText="ID" text="" AnchorPane.leftAnchor="119.0" AnchorPane.topAnchor="104.0" />
+                          <TextField id="AccountEdit" fx:id="AccountEditEmail" promptText="Email" text="" AnchorPane.leftAnchor="119.0" AnchorPane.topAnchor="144.0" />
+                          <TextField id="AccountEdit" fx:id="AccountEditPhone" promptText="Phone Number" text="" AnchorPane.leftAnchor="119.0" AnchorPane.topAnchor="184.0" />
+                          <TextField id="AccountEdit" fx:id="AccountEditUsername" promptText="Username" text="" AnchorPane.leftAnchor="119.0" AnchorPane.topAnchor="224.0" />
+                          <MenuButton fx:id="AccountEditMenu" mnemonicParsing="false" text="..." textAlignment="CENTER" underline="false" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+                            <items>
+                              <MenuItem mnemonicParsing="false" text="Edit" />
+                            </items>
+                          </MenuButton>
+                          <Button fx:id="AccountEditSave" mnemonicParsing="false" text="Save" AnchorPane.bottomAnchor="19.0" AnchorPane.rightAnchor="27.0" />
+                          <Button fx:id="AccountEditDelete" mnemonicParsing="false" text="Delete" AnchorPane.bottomAnchor="19.0" AnchorPane.leftAnchor="9.0" />
+                          <PasswordField fx:id="AccountEditPassword" prefWidth="165.0" promptText="Password" text="" AnchorPane.leftAnchor="119.0" AnchorPane.topAnchor="264.0" />
+                        </children>
+                      </AnchorPane>
+                    </Pane>
+                  </center>
+                  <left>
+                    <ListView fx:id="ticketListView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+                  </left>
+                  <top>
+                    <HBox prefHeight="29.0" prefWidth="1117.0" BorderPane.alignment="CENTER">
+                      <children>
+                        <TextField fx:id="srchBar" promptText="Search">
+                          <HBox.margin>
+                            <Insets right="20.0" />
+                          </HBox.margin>
+                        </TextField>
+                        <ComboBox fx:id="statusComboBox" prefWidth="150.0" promptText="Status">
+                          <HBox.margin>
+                            <Insets right="20.0" />
+                          </HBox.margin>
+                        </ComboBox>
+                        <ComboBox fx:id="severityComboBox" prefWidth="150.0" promptText="Severity">
+                          <HBox.margin>
+                            <Insets right="20.0" />
+                          </HBox.margin>
+                        </ComboBox>
+                        <ComboBox fx:id="priorityComboBox" prefWidth="150.0" promptText="Priority" />
+                      </children>
+                    </HBox>
+                  </top>
+                </BorderPane>
+              </children>
+            </AnchorPane>
+          </content>
+        </Tab>
+        <Tab fx:id="accountsTab" text="Accounts">
+          <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+          </content>
+        </Tab>
+        <Tab fx:id="reportsTab" text="Reports">
+          <content>
+            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+          </content>
+        </Tab>
+      </tabs>
+    </TabPane>
+  </center>
+  <top>
+    <MenuBar BorderPane.alignment="CENTER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Close" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Edit">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Delete" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem mnemonicParsing="false" text="About" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+  </top>
+</BorderPane>
