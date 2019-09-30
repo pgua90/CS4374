@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+  <children>
+    <Label id="AccountDetail" fx:id="AccountDetailLabelName" text="Name:" AnchorPane.leftAnchor="18.0" AnchorPane.topAnchor="17.0" />
+    <Label id="AccountDetail" fx:id="AccountDetailLabelRole" text="User Role:" AnchorPane.leftAnchor="18.0" AnchorPane.topAnchor="57.0" />
+    <Label id="AccountDetail" fx:id="AccountDetailLabelID" text="ID:" AnchorPane.leftAnchor="18.0" AnchorPane.topAnchor="97.0" />
+    <Label id="AccountDetail" fx:id="AccountDetailLabelEmail" text="Email:" AnchorPane.leftAnchor="18.0" AnchorPane.topAnchor="137.0" />
+    <Label id="AccountDetail" fx:id="AccountDetailLabelPhone" text="Phone Number:" AnchorPane.leftAnchor="18.0" AnchorPane.topAnchor="177.0" />
+    <Label id="AccountDetail" fx:id="AccountDetailLabelUsername" text="Username:" AnchorPane.leftAnchor="18.0" AnchorPane.topAnchor="217.0" />
+    <Label id="AccountDetail" fx:id="AccountDetailLabelPassword" text="Password:" AnchorPane.leftAnchor="18.0" AnchorPane.topAnchor="257.0" />
+    <Text id="AccountDetail" fx:id="AccountDetailName" strokeType="OUTSIDE" strokeWidth="0.0" text="Reagan Kesner" AnchorPane.leftAnchor="129.0" AnchorPane.topAnchor="16.93" />
+    <Text id="AccountDetail" fx:id="AccountDetailRole" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin" AnchorPane.leftAnchor="129.0" AnchorPane.topAnchor="56.93" />
+    <Text id="AccountDetail" fx:id="AccountDetailID" strokeType="OUTSIDE" strokeWidth="0.0" text="123456" AnchorPane.leftAnchor="129.0" AnchorPane.topAnchor="96.93" />
+    <Text id="AccountDetail" fx:id="AccountDetailEmail" strokeType="OUTSIDE" strokeWidth="0.0" text="test@email.com" AnchorPane.leftAnchor="129.0" AnchorPane.topAnchor="136.93" />
+    <Text id="AccountDetail" fx:id="AccountDetailPhone" strokeType="OUTSIDE" strokeWidth="0.0" text="(123) 456 - 7890" AnchorPane.leftAnchor="129.0" AnchorPane.topAnchor="177.93" />
+    <Text id="AccountDetail" fx:id="AccountDetailUsername" strokeType="OUTSIDE" strokeWidth="0.0" text="MGScott" AnchorPane.leftAnchor="129.0" AnchorPane.topAnchor="216.93" />
+    <Text id="AccountDetail" fx:id="AccountDetailPassword" strokeType="OUTSIDE" strokeWidth="0.0" text="*****" AnchorPane.leftAnchor="129.0" AnchorPane.topAnchor="256.93" />
+    <MenuButton fx:id="AccountDetailMenu" mnemonicParsing="false" text="..." textAlignment="CENTER" underline="false" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+      <items>
+        <MenuItem mnemonicParsing="false" text="Edit" fx:id="AccountDetailEditButton" />
+      </items>
+    </MenuButton>
+  </children>
+</AnchorPane>
