@@ -7,12 +7,12 @@ import java.sql.*;
  */
 
 public class sendInfo {
-    public static void drive(String sql) throws SQLException, ClassNotFoundException, InstantiationException, IllegalAccessException {
+    public static boolean drive(String sql) throws SQLException, ClassNotFoundException, InstantiationException, IllegalAccessException {
         // TODO Auto-generated method stub
         String url = "jdbc:mysql://172.20.43.226:3306/TicketTraker?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
         String user = "user";
         String password = "password";
-
+        boolean pass = false;
         Connection myConn = null;
         Statement myStmt = null;
 
@@ -28,6 +28,7 @@ public class sendInfo {
             myStmt.executeUpdate(sql);
 
             System.out.println("DB Updated");
+            pass = true;
         } catch (Exception exc) {
             exc.printStackTrace();
         } finally {
@@ -39,6 +40,7 @@ public class sendInfo {
                 myConn.close();
             }
         }
+        return pass;
     }
 
 
