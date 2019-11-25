@@ -1,0 +1,593 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane fx:controller="CSWT.controllers.TicketAdminController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="754.0" prefWidth="1117.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <center>
+      <AnchorPane BorderPane.alignment="TOP_CENTER">
+         <children>
+            <TabPane prefHeight="781.0" prefWidth="1117.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0">
+               <tabs>
+                  <Tab text="Tickets">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="673.0" prefWidth="1117.0">
+                           <children>
+                              <BorderPane layoutX="138.0" layoutY="101.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <center>
+                                    <Pane fx:id="ticketDescriptionPane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Label layoutX="41.0" layoutY="9.0" text="Ticket Information">
+                                             <font>
+                                                <Font name="System Bold" size="42.0" />
+                                             </font></Label>
+                                          <Label layoutX="85.0" layoutY="91.0" text="Title:" />
+                                          <Label layoutX="53.0" layoutY="149.0" text="Description:" />
+                                          <Label layoutX="55.0" layoutY="322.0" text="Resolution:" />
+                                          <Label layoutX="477.0" layoutY="35.0" text="Status: " />
+                                          <Label layoutX="474.0" layoutY="99.0" text="Severity:" />
+                                          <Label layoutX="476.0" layoutY="171.0" text="Priority:" />
+                                          <Label layoutX="480.0" layoutY="221.0" text="Client:" />
+                                          <Label layoutX="446.0" layoutY="271.0" text="Assigned To:" />
+                                          <Label layoutX="452.0" layoutY="322.0" text="Open Date:" />
+                                          <Label layoutX="451.0" layoutY="376.0" text="Time Worked:" />
+                                          <Label layoutX="447.0" layoutY="426.0" text="Closed Date:" />
+                                          <Button fx:id="closeTicketViewButton" layoutX="41.0" layoutY="525.0" mnemonicParsing="false" text="Close" onAction="#oncloseTicketViewButtonPressed"/>
+                                          <Button fx:id="clearTicketViewButton" layoutX="497.0" layoutY="525.0" mnemonicParsing="false" text="Clear" onAction="#onclearTicketViewButtonPressed"/>
+                                          <Button fx:id="resolvedTicketViewButton" layoutX="586.0" layoutY="525.0" mnemonicParsing="false" text="Resolved" onAction="#onresolvedTicketViewButtonPressed"/>
+                                          <Button fx:id="rejectTicketViewButton" layoutX="689.0" layoutY="525.0" mnemonicParsing="false" text="Reject" onAction="#onrejectTicketViewButtonPressed"/>
+                                          <Button fx:id="saveTicketViewButton" layoutX="779.0" layoutY="525.0" mnemonicParsing="false" text="Save" onAction="#onsaveTicketViewButtonPressed"/>
+                                          <ComboBox fx:id="assignedToTicketViewComboBox" layoutX="552.0" layoutY="268.0" prefWidth="150.0" promptText="Select User" />
+                                          <ComboBox fx:id="clientTicketViewComboBox" layoutX="539.0" layoutY="216.0" promptText="Client" />
+                                          <TextField fx:id="timeWorkedTicketViewTextField" layoutX="539.0" layoutY="371.0" promptText="Enter time worked" />
+                                          <TextField fx:id="titleTicketViewTextField" layoutX="139.0" layoutY="88.0" />
+                                          <TextArea fx:id="descriptionTicketViewTextField" layoutX="126.0" layoutY="150.0" prefHeight="143.0" prefWidth="200.0" />
+                                          <TextArea fx:id="resolutionTicketViewTextField" layoutX="126.0" layoutY="326.0" prefHeight="144.0" prefWidth="200.0" />
+                                          <ComboBox fx:id="severityTicketViewComboBox" layoutX="552.0" layoutY="95.0" prefWidth="150.0" promptText="Select Severity" />
+                                          <ComboBox fx:id="statusTicketViewComboBox" layoutX="552.0" layoutY="31.0" prefWidth="150.0" promptText="Select Status" />
+                                          <ComboBox fx:id="priorityTicketViewComboBox" layoutX="557.0" layoutY="159.0" prefWidth="150.0" promptText="Select Priority" />
+                                          <DatePicker fx:id="closedTicketViewLabel" layoutX="526.0" layoutY="421.0" promptText="Select date" />
+                                          <DatePicker fx:id="openDateTicketViewLabel" layoutX="533.0" layoutY="317.0" promptText="Select date" />
+                                          <TableView fx:id="ticketResolutionUpdateTicketViewTableView" layoutX="724.0" layoutY="14.0" prefHeight="444.0" prefWidth="200.0">
+                                             <columns>
+                                                <TableColumn prefWidth="75.0" text="C1" />
+                                                <TableColumn prefWidth="75.0" text="C2" />
+                                             </columns>
+                                          </TableView>
+                                          <Text fx:id="messageTicketViewLabel" layoutX="6.0" layoutY="574.0" text="This is a sample message." />
+                                       </children>
+                                    </Pane>
+                                 </center>
+                                 <left>
+                                    <ListView fx:id="ticketListView" onMouseClicked="#onListViewClicked" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+                                 </left>
+                                 <top>
+                                    <VBox spacing="10.0" style="-fx-background-color: #E0E0E0#E0E0E0;" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <HBox alignment="CENTER" prefHeight="29.0" prefWidth="1117.0" spacing="10.0">
+                                             <children>
+                                                <VBox layoutX="10.0" layoutY="10.0">
+                                                   <children>
+                                                      <Label text="Title" />
+                                                      <TextField fx:id="titleTicketSearchTextField" minWidth="92.0" prefHeight="25.0" prefWidth="92.0" promptText="Search title" />
+                                                   </children>
+                                                </VBox>
+                                                <Separator layoutX="1002.0" layoutY="10.0" orientation="VERTICAL" prefHeight="200.0" />
+                                                <VBox layoutX="10.0" layoutY="10.0">
+                                                   <children>
+                                                      <Label text="Description" />
+                                                      <TextField fx:id="descriptionTicketSearchTextField" minWidth="100.0" prefHeight="25.0" prefWidth="133.0" promptText="Search description" />
+                                                   </children>
+                                                </VBox>
+                                                <Separator layoutX="1018.0" layoutY="10.0" orientation="VERTICAL" prefHeight="200.0" />
+                                                <VBox layoutX="191.0" layoutY="10.0">
+                                                   <children>
+                                                      <Label text="Resolution" />
+                                                      <TextField fx:id="resolutionTicketSearchTextField" minWidth="100.0" prefHeight="25.0" prefWidth="124.0" promptText="Search resolution" />
+                                                   </children>
+                                                </VBox>
+                                                <Separator layoutX="1034.0" layoutY="10.0" orientation="VERTICAL" prefHeight="200.0" />
+                                                <VBox>
+                                                   <children>
+                                                      <Label text="Priority" />
+                                                      <ComboBox fx:id="priorityTicketSearchComboBox" prefHeight="25.0" prefWidth="130.0" promptText="Priority" />
+                                                   </children>
+                                                </VBox>
+                                                <Separator layoutX="1050.0" layoutY="10.0" orientation="VERTICAL" prefHeight="200.0" />
+                                                <VBox layoutX="542.0" layoutY="10.0">
+                                                   <children>
+                                                      <Label text="Severity" />
+                                                      <ComboBox fx:id="severityTicketSearchComboBox" prefHeight="25.0" prefWidth="122.0" promptText="Severity" />
+                                                   </children>
+                                                </VBox>
+                                                <Separator layoutX="746.0" layoutY="10.0" orientation="VERTICAL" prefHeight="200.0" />
+                                                <VBox layoutX="702.0" layoutY="10.0">
+                                                   <children>
+                                                      <Label text="Status" />
+                                                      <ComboBox fx:id="statusTicketSearchComboBox" prefHeight="25.0" prefWidth="97.0" promptText="Status" />
+                                                   </children>
+                                                </VBox>
+                                                <Separator orientation="VERTICAL" prefHeight="200.0" />
+                                                <Button fx:id="searchTicketSearchButton" alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="Search" textAlignment="CENTER" onAction="#onsearchTicketSearchButtonPressed"/>
+                                                <Separator orientation="VERTICAL" prefHeight="42.0" prefWidth="53.0" />
+                                                <Button fx:id="addNewTicketButton" mnemonicParsing="false" prefHeight="25.0" prefWidth="113.0" text="+ Add New Ticket" onAction="#onaddNewTicketButtonPressed"/>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets bottom="5.0" left="10.0" right="10.0" top="10.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox layoutX="10.0" layoutY="10.0" prefHeight="29.0" prefWidth="1117.0" spacing="10.0">
+                                             <children>
+                                                <VBox fillWidth="false" prefHeight="200.0" prefWidth="100.0">
+                                                   <children>
+                                                      <Label text="Close date range" />
+                                                      <HBox spacing="10.0">
+                                                         <children>
+                                                            <Label minWidth="30.0" text="From" />
+                                                            <DatePicker fx:id="fromCloseDateTicketSearchDatePicker" minWidth="120.0" promptText="Select date" />
+                                                            <Label layoutX="10.0" layoutY="10.0" minWidth="20.0" text="To" HBox.hgrow="ALWAYS" />
+                                                            <DatePicker fx:id="toCloseDateTicketSearchDatePicker" layoutX="20.0" layoutY="10.0" minWidth="120.0" promptText="Select date" />
+                                                         </children>
+                                                      </HBox>
+                                                   </children>
+                                                </VBox>
+                                                <Separator orientation="VERTICAL" prefHeight="200.0" />
+                                                <VBox layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+                                                   <children>
+                                                      <Label text="Open date range" />
+                                                      <HBox spacing="10.0">
+                                                         <children>
+                                                            <Label minWidth="30.0" text="From" />
+                                                            <DatePicker fx:id="fromOpenDateTicketSearchDatePicker" minWidth="120.0" promptText="Select date" />
+                                                            <Label layoutX="10.0" layoutY="10.0" minWidth="20.0" text="To" HBox.hgrow="ALWAYS" />
+                                                            <DatePicker fx:id="toOpenDateTicketSearchDatePicker" layoutX="20.0" layoutY="10.0" minWidth="120.0" promptText="Select date" />
+                                                         </children>
+                                                      </HBox>
+                                                   </children>
+                                                </VBox>
+                                                <Separator layoutX="300.0" layoutY="10.0" orientation="VERTICAL" prefHeight="200.0" />
+                                                <VBox>
+                                                   <children>
+                                                      <Label text="Assigned to" />
+                                                      <ComboBox fx:id="assignedToTicketSearchComboBox" prefHeight="25.0" prefWidth="90.0" promptText="User" />
+                                                   </children>
+                                                </VBox>
+                                                <Separator layoutX="1086.0" layoutY="10.0" orientation="VERTICAL" prefHeight="200.0" />
+                                                <VBox>
+                                                   <children>
+                                                      <Label text="Client" />
+                                                      <ComboBox fx:id="clientTicketSearchComboBox" prefHeight="25.0" prefWidth="99.0" promptText="Client" />
+                                                   </children>
+                                                </VBox>
+                                                <Separator layoutX="1102.0" layoutY="10.0" orientation="VERTICAL" prefHeight="200.0" />
+                                                <VBox>
+                                                   <children>
+                                                      <Label text="Support Category" />
+                                                      <ComboBox fx:id="supportCategoryTicketSearchComboBox" prefWidth="150.0" promptText="Support Category" />
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </top>
+                              </BorderPane>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab text="Users">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <BorderPane prefHeight="672.0" prefWidth="1117.0">
+                                 <center>
+                                    <Pane fx:id="ticketDescriptionPane1" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <AnchorPane id="AnchorPane" layoutY="-2.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="618.0" prefWidth="917.0">
+                                             <children>
+                                                <Label id="AccountLabel" fx:id="AccountLabelName" layoutX="38.0" layoutY="78.0" text="First Name:" AnchorPane.leftAnchor="38.0" />
+                                                <Label id="AccountLabel" fx:id="AccountLabelRole" layoutX="40.0" layoutY="147.0" text="User Role:" AnchorPane.leftAnchor="40.0" />
+                                                <Label id="AccountLabel" fx:id="AccountLabelID" layoutX="40.0" layoutY="187.0" text="ID:" AnchorPane.leftAnchor="40.0" />
+                                                <Label id="AccountLabel" fx:id="AccountLabelEmail" layoutX="40.0" layoutY="227.0" text="Email:" AnchorPane.leftAnchor="40.0" />
+                                                <Label id="AccountLabel" fx:id="AccountLabelPhone" layoutX="40.0" layoutY="267.0" text="Phone Number:" AnchorPane.leftAnchor="40.0" />
+                                                <Label id="AccountLabel" fx:id="AccountLabelUsername" layoutX="40.0" layoutY="307.0" text="Username:" AnchorPane.leftAnchor="40.0" />
+                                                <Label id="AccountLabel" fx:id="AccountLabelPassword" layoutX="40.0" layoutY="347.0" text="Password:" AnchorPane.leftAnchor="40.0" />
+                                                <TextField id="AccountEdit" fx:id="firstNameUserViewTextField" layoutX="150.0" layoutY="74.0" promptText="First Name" text="" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="74.0" />
+                                                <TextField id="AccountEdit" fx:id="idUserViewTextField" layoutX="150.0" layoutY="184.0" promptText="ID" text="" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="184.0" />
+                                                <TextField id="AccountEdit" fx:id="emailUserViewTextField" layoutX="150.0" layoutY="224.0" promptText="Email" text="" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="224.0" />
+                                                <TextField id="AccountEdit" fx:id="numberUserViewTextField" layoutX="150.0" layoutY="264.0" promptText="Phone Number" text="" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="264.0" />
+                                                <TextField id="AccountEdit" fx:id="usernameUserViewTextField" layoutX="150.0" layoutY="304.0" promptText="Username" text="" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="304.0" />
+                                                <Button fx:id="saveUserViewButton" layoutX="829.0" layoutY="604.0" mnemonicParsing="false" text="Save" AnchorPane.bottomAnchor="29.0" AnchorPane.rightAnchor="34.0" onAction="#onsaveUserViewButtonPressed"/>
+                                                <Button fx:id="removeUserViewButton" layoutX="61.0" layoutY="564.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" text="Remove" AnchorPane.bottomAnchor="29.0" AnchorPane.leftAnchor="61.0" onAction="#onremoveUserViewButton"/>
+                                                <PasswordField fx:id="passwordUserViewTextField" layoutX="150.0" layoutY="344.0" prefWidth="165.0" promptText="Password" text="" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="344.0" />
+                                                <TextField fx:id="lastNameUserViewTextField" layoutX="150.0" layoutY="108.0" promptText="Last Name" />
+                                                <Text layoutX="44.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name:" />
+                                                <Text layoutX="459.0" layoutY="42.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User" />
+                                                <ComboBox fx:id="roleUserViewComboBox" layoutX="151.0" layoutY="144.0" prefHeight="27.0" prefWidth="159.0" promptText="User Role" />
+                                                <Label id="AccountLabel" fx:id="AccountLabelPassword1" layoutX="38.0" layoutY="386.0" text="Confirm Password:" />
+                                                <PasswordField fx:id="confirmPasswordUserViewTextField1" layoutX="148.0" layoutY="383.0" prefWidth="165.0" promptText="Confirm Password" text="" />
+                                             </children>
+                                          </AnchorPane>
+                                       </children>
+                                    </Pane>
+                                 </center>
+                                 <left>
+                                    <ListView fx:id="userListView" prefHeight="650.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+                                 </left>
+                                 <top>
+                                    <VBox spacing="10.0" style="-fx-background-color: #E0E0E0#E0E0E0;" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <HBox alignment="CENTER" prefHeight="29.0" prefWidth="1117.0" spacing="10.0">
+                                             <children>
+                                                <VBox layoutX="10.0" layoutY="10.0">
+                                                   <children>
+                                                      <Label text="First Name" />
+                                                      <TextField fx:id="firstNameUserSearchTextField" minWidth="100.0" prefHeight="25.0" prefWidth="113.0" promptText="Search first name" />
+                                                   </children>
+                                                </VBox>
+                                                <Separator orientation="VERTICAL" prefHeight="200.0" />
+                                                <VBox prefHeight="42.0" prefWidth="130.0">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name" />
+                                                      <TextField fx:id="lastNameUserSearchTextField" prefHeight="25.0" prefWidth="102.0" promptText="Search last name" />
+                                                   </children>
+                                                </VBox>
+                                                <Separator layoutX="1002.0" layoutY="10.0" orientation="VERTICAL" prefHeight="200.0" />
+                                                <VBox layoutX="10.0" layoutY="10.0" prefHeight="42.0" prefWidth="117.0">
+                                                   <children>
+                                                      <Label text="ID" />
+                                                      <TextField fx:id="idUserSearchTextField" minWidth="100.0" promptText="Search ID" />
+                                                   </children>
+                                                </VBox>
+                                                <Separator layoutX="1018.0" layoutY="10.0" orientation="VERTICAL" prefHeight="200.0" />
+                                                <VBox layoutX="191.0" layoutY="10.0">
+                                                   <children>
+                                                      <Label text="Email" />
+                                                      <TextField fx:id="emailUserSearchTextField" minWidth="100.0" promptText="Search email" />
+                                                   </children>
+                                                </VBox>
+                                                <Separator layoutX="1034.0" layoutY="10.0" orientation="VERTICAL" prefHeight="200.0" />
+                                                <VBox>
+                                                   <children>
+                                                      <Label text="Phone Number:" />
+                                                      <TextField fx:id="numberUserSearchTextField" promptText="Search phone number" />
+                                                   </children>
+                                                </VBox>
+                                                <Separator layoutX="1050.0" layoutY="10.0" orientation="VERTICAL" prefHeight="200.0" />
+                                                <VBox layoutX="542.0" layoutY="10.0" prefHeight="42.0" prefWidth="127.0">
+                                                   <children>
+                                                      <Label text="User Role" />
+                                                      <ComboBox fx:id="roleUserSearchComboBox" prefWidth="150.0" promptText="User Role" />
+                                                   </children>
+                                                </VBox>
+                                                <Separator layoutX="746.0" layoutY="10.0" orientation="VERTICAL" prefHeight="200.0" />
+                                                <VBox layoutX="702.0" layoutY="10.0" />
+                                                <Button fx:id="searchUserSearchButton" alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="71.0" text="Search" textAlignment="CENTER" onAction="#onsearchUserSearchButtonPressed"/>
+                                                <Separator orientation="VERTICAL" prefHeight="42.0" prefWidth="32.0" />
+                                                <Button fx:id="addNewUserButton" mnemonicParsing="false" prefHeight="25.0" prefWidth="122.0" text="+ Add New User" onAction="#onaddNewUserButtonPressed"/>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets bottom="5.0" left="10.0" right="10.0" top="10.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </top>
+                              </BorderPane>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab text="Clients">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="673.0" prefWidth="1117.0">
+                           <children>
+                              <BorderPane layoutX="138.0" layoutY="101.0" prefHeight="672.0" prefWidth="1117.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <left>
+                                    <ListView fx:id="clientListView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+                                 </left>
+                                 <center>
+                                    <AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="643.0" prefWidth="919.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Label id="AccountLabel" fx:id="AccountLabelName1" layoutX="40.0" layoutY="121.0" text="Last Name:" AnchorPane.leftAnchor="40.0" />
+                                          <Label id="AccountLabel" fx:id="AccountLabelEmail1" layoutX="40.0" layoutY="158.0" text="Email:" AnchorPane.leftAnchor="40.0" />
+                                          <Label id="AccountLabel" fx:id="AccountLabelPhone1" layoutX="40.0" layoutY="204.0" text="Phone Number:" AnchorPane.leftAnchor="40.0" />
+                                          <TextField id="AccountEdit" fx:id="lastNameClientViewTextField" layoutX="154.0" layoutY="117.0" promptText="Last Name" text="" AnchorPane.leftAnchor="154.0" AnchorPane.topAnchor="117.0" />
+                                          <TextField id="AccountEdit" fx:id="emailClientViewTextField" layoutX="152.0" layoutY="154.0" promptText="Email" text="" AnchorPane.leftAnchor="152.0" AnchorPane.topAnchor="154.0" />
+                                          <TextField id="AccountEdit" fx:id="numberClientViewTextField" layoutX="152.0" layoutY="200.0" promptText="Phone Number" text="" AnchorPane.leftAnchor="152.0" AnchorPane.topAnchor="200.0" />
+                                          <Button fx:id="saveClientViewButton" layoutX="803.0" layoutY="589.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="63.0" text="Save" AnchorPane.bottomAnchor="29.0" AnchorPane.rightAnchor="75.0" onAction="#onsaveClientViewButtonPressed"/>
+                                          <Button fx:id="removeClientViewButton" layoutX="40.0" layoutY="589.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="76.0" text="Remove" AnchorPane.bottomAnchor="29.0" AnchorPane.leftAnchor="40.0" onAction="#onremoveClientViewButtonPressed"/>
+                                          <Text layoutX="460.0" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Client" />
+                                          <Text layoutX="38.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="First Name:" />
+                                          <TextField fx:id="firstNameClientViewTextField" layoutX="154.0" layoutY="73.0" promptText="First Name" />
+                                       </children>
+                                    </AnchorPane>
+                                 </center>
+                                 <top>
+                                    <VBox spacing="10.0" style="-fx-background-color: #E0E0E0#E0E0E0;" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <HBox alignment="CENTER" prefHeight="29.0" prefWidth="1117.0" spacing="10.0">
+                                             <children>
+                                                <VBox layoutX="10.0" layoutY="10.0">
+                                                   <children>
+                                                      <Label text="First Name" />
+                                                      <TextField fx:id="firstNameClientSearchTextField" minWidth="100.0" prefHeight="25.0" prefWidth="124.0" promptText="Search first name" />
+                                                   </children>
+                                                </VBox>
+                                                <Separator orientation="VERTICAL" prefHeight="200.0" />
+                                                <VBox prefHeight="42.0" prefWidth="120.0">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name" />
+                                                      <TextField fx:id="lastNameClientSearchTextField" prefHeight="25.0" prefWidth="160.0" promptText="Search last name" />
+                                                   </children>
+                                                </VBox>
+                                                <Separator layoutX="1002.0" layoutY="10.0" orientation="VERTICAL" prefHeight="200.0" />
+                                                <VBox layoutX="10.0" layoutY="10.0">
+                                                   <children>
+                                                      <Label text="ID" />
+                                                      <TextField fx:id="idClientSearchTextField" minWidth="97.0" prefHeight="25.0" prefWidth="97.0" promptText="Search ID" />
+                                                   </children>
+                                                </VBox>
+                                                <Separator layoutX="1018.0" layoutY="10.0" orientation="VERTICAL" prefHeight="200.0" />
+                                                <VBox layoutX="191.0" layoutY="10.0">
+                                                   <children>
+                                                      <Label text="Email" />
+                                                      <TextField fx:id="emailClientSearchTextField" minWidth="100.0" prefHeight="25.0" prefWidth="123.0" promptText="Search email" />
+                                                   </children>
+                                                </VBox>
+                                                <Separator layoutX="1034.0" layoutY="10.0" orientation="VERTICAL" prefHeight="200.0" />
+                                                <VBox>
+                                                   <children>
+                                                      <Label text="Phone Number:" />
+                                                      <TextField fx:id="numberClientSearchTextField" promptText="Search phone number" />
+                                                   </children>
+                                                </VBox>
+                                                <Separator layoutX="1050.0" layoutY="10.0" orientation="VERTICAL" prefHeight="200.0" />
+                                                <VBox layoutX="542.0" layoutY="10.0" />
+                                                <VBox layoutX="702.0" layoutY="10.0" />
+                                                <Button fx:id="searchClientSearchButton" alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="90.0" text="Search" textAlignment="CENTER" onAction="#onsearchClientSearchButtonPressed"/>
+                                                <Separator orientation="VERTICAL" prefHeight="42.0" prefWidth="84.0" />
+                                                <Button fx:id="addNewClientButton" mnemonicParsing="false" text="+ Add New Client" onAction="#onaddNewClientButtonPressed"/>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets bottom="5.0" left="10.0" right="10.0" top="10.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </top>
+                              </BorderPane>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab text="Support Categories">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="673.0" prefWidth="1117.0">
+                           <children>
+                              <BorderPane layoutX="138.0" layoutY="101.0" prefHeight="672.0" prefWidth="1117.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <center>
+                                    <Pane fx:id="ticketDescriptionPane2111" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Label layoutX="36.0" layoutY="92.0" text="Support Category Title:" />
+                                          <Label layoutX="400.0" layoutY="26.0" text="Support Category" />
+                                          <Button fx:id="removeSupportCategoryViewButton" layoutX="60.0" layoutY="589.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="90.0" text="Remove" onAction="#onremoveSupportCategoryViewButtonPressed"/>
+                                          <Button fx:id="saveSupportCateogryViewButton" layoutX="765.0" layoutY="589.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="76.0" text="Save" onAction="#onsaveSupportCateogryViewButtonPressed"/>
+                                          <TextField fx:id="titleSupportCategoryViewTextField" layoutX="176.0" layoutY="88.0" prefHeight="25.0" prefWidth="216.0" />
+                                       </children>
+                                    </Pane>
+                                 </center>
+                                 <left>
+                                    <ListView fx:id="supportCategoryListView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+                                 </left>
+                                 <top>
+                                    <VBox spacing="10.0" style="-fx-background-color: #E0E0E0#E0E0E0;" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <HBox alignment="CENTER" prefHeight="29.0" prefWidth="1117.0" spacing="10.0">
+                                             <children>
+                                                <VBox layoutX="10.0" layoutY="10.0">
+                                                   <children>
+                                                      <Label text="Support Category" />
+                                                      <TextField fx:id="titleSupportCategorySearchTextField" minWidth="100.0" promptText="Search support category" />
+                                                   </children>
+                                                </VBox>
+                                                <Separator layoutX="1002.0" layoutY="10.0" orientation="VERTICAL" prefHeight="42.0" prefWidth="0.0" />
+                                                <VBox layoutX="10.0" layoutY="10.0" />
+                                                <VBox layoutX="191.0" layoutY="10.0" />
+                                                <VBox />
+                                                <VBox layoutX="542.0" layoutY="10.0" />
+                                                <VBox layoutX="702.0" layoutY="10.0" />
+                                                <Button fx:id="searchSupportCategorySearchButton" alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="81.0" text="Search" textAlignment="CENTER" onAction="#onsearchSupportCategorySearchButtonPressed"/>
+                                                <Separator orientation="VERTICAL" prefHeight="42.0" prefWidth="112.0" />
+                                                <Button fx:id="addNewSupportCategoryButton" mnemonicParsing="false" text="+ Add New Support Category" onAction="#onaddNewSupportCategoryButtonPressed"/>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets bottom="5.0" left="10.0" right="10.0" top="10.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </top>
+                              </BorderPane>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab text="Status">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="673.0" prefWidth="1117.0">
+                           <children>
+                              <BorderPane layoutX="138.0" layoutY="101.0" prefHeight="672.0" prefWidth="1117.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <center>
+                                    <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Label layoutX="27.0" layoutY="99.0" text="Status Name:" />
+                                          <Button fx:id="removeStatusViewButton" layoutX="40.0" layoutY="589.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="71.0" text="Remove" onAction="#onremoveStatusViewButtonPressed"/>
+                                          <TextField fx:id="nameStatusViewTextField" layoutX="134.0" layoutY="95.0" />
+                                          <Button fx:id="saveStatusViewButton" layoutX="763.0" layoutY="589.0" prefHeight="25.0" prefWidth="67.0" text="Save" onAction="#onsaveStatusViewButtonPressed"/>
+                                          <Label layoutX="404.0" layoutY="22.0" text="Status" />
+                                       </children>
+                                    </Pane>
+                                 </center>
+                                 <left>
+                                    <ListView fx:id="statusListView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+                                 </left>
+                                 <top>
+                                    <VBox spacing="10.0" style="-fx-background-color: #E0E0E0#E0E0E0;" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <HBox alignment="CENTER" prefHeight="29.0" prefWidth="1117.0" spacing="10.0">
+                                             <children>
+                                                <VBox layoutX="10.0" layoutY="10.0">
+                                                   <children>
+                                                      <Label text="Status" />
+                                                      <TextField fx:id="nameStatusSearchTextField" minWidth="100.0" promptText="Search status name" />
+                                                   </children>
+                                                </VBox>
+                                                <Separator layoutX="1002.0" layoutY="10.0" orientation="VERTICAL" prefHeight="200.0" />
+                                                <VBox layoutX="10.0" layoutY="10.0" />
+                                                <VBox layoutX="191.0" layoutY="10.0" />
+                                                <VBox />
+                                                <VBox layoutX="542.0" layoutY="10.0" />
+                                                <VBox layoutX="702.0" layoutY="10.0" />
+                                                <Button fx:id="searchStatusSearchTextField" alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="81.0" text="Search" textAlignment="CENTER" onAction="#onsearchStatusSearchTextFieldPressed"/>
+                                                <Separator orientation="VERTICAL" prefHeight="42.0" prefWidth="122.0" />
+                                                <Button fx:id="addNewStatusButton" mnemonicParsing="false" text="+ Add New Status" onAction="#onaddNewStatusButtonPressed"/>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets bottom="5.0" left="10.0" right="10.0" top="10.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </top>
+                              </BorderPane>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab text="Severity">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="673.0" prefWidth="1117.0">
+                           <children>
+                              <BorderPane layoutX="138.0" layoutY="101.0" prefHeight="672.0" prefWidth="1117.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <center>
+                                    <Pane fx:id="ticketDescriptionPane211" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Label layoutX="27.0" layoutY="99.0" text="Severity Name:" />
+                                          <Button fx:id="removeSeverityViewButton" layoutX="71.0" layoutY="589.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="71.0" text="Remove" onAction="#onremoveSeverityViewButtonPressed"/>
+                                          <TextField fx:id="nameSeverityViewTextField" layoutX="134.0" layoutY="95.0" />
+                                          <Button fx:id="saveSeverityViewButton" layoutX="785.0" layoutY="589.0" prefHeight="25.0" prefWidth="67.0" text="Save" onAction="#onsaveSeverityViewButtonPressed"/>
+                                          <Label layoutX="404.0" layoutY="22.0" text="Severity" />
+                                       </children>
+                                    </Pane>
+                                 </center>
+                                 <left>
+                                    <ListView fx:id="severityListView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+                                 </left>
+                                 <top>
+                                    <VBox spacing="10.0" style="-fx-background-color: #E0E0E0#E0E0E0;" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <HBox alignment="CENTER" prefHeight="29.0" prefWidth="1117.0" spacing="10.0">
+                                             <children>
+                                                <VBox layoutX="10.0" layoutY="10.0">
+                                                   <children>
+                                                      <Label text="Severity" />
+                                                      <TextField fx:id="nameSeveritySaerchTextField" minWidth="100.0" promptText="Search severity name" />
+                                                   </children>
+                                                </VBox>
+                                                <Separator layoutX="1002.0" layoutY="10.0" orientation="VERTICAL" prefHeight="200.0" />
+                                                <VBox layoutX="10.0" layoutY="10.0" />
+                                                <VBox layoutX="191.0" layoutY="10.0" />
+                                                <VBox />
+                                                <VBox layoutX="542.0" layoutY="10.0" />
+                                                <VBox layoutX="702.0" layoutY="10.0" />
+                                                <Button fx:id="searchSeveritySearchTextField" alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="81.0" text="Search" textAlignment="CENTER" onAction="#onsearchSeveritySearchTextFieldPressed"/>
+                                                <Separator orientation="VERTICAL" prefHeight="42.0" prefWidth="122.0" />
+                                                <Button fx:id="addNewSeverityButton" mnemonicParsing="false" text="+ Add New Severity" onAction="#onaddNewSeverityButtonPressed"/>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets bottom="5.0" left="10.0" right="10.0" top="10.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </top>
+                              </BorderPane>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab text="My Account">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="673.0" prefWidth="1117.0">
+                           <children>
+                              <BorderPane layoutX="138.0" layoutY="101.0" prefHeight="672.0" prefWidth="1117.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <center>
+                                    <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Button fx:id="saveMyAccountButton" layoutX="956.0" layoutY="597.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="81.0" text="Save" onAction="#onsaveMyAccountButtonPressed"/>
+                                          <TextField fx:id="firstNameMyAccountTextField" layoutX="159.0" layoutY="90.0" />
+                                          <Label layoutX="76.0" layoutY="94.0" text="First Name:" />
+                                          <Text fx:id="myAccountLabel" layoutX="463.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="My Account">
+                                             <font>
+                                                <Font size="36.0" />
+                                             </font>
+                                          </Text>
+                                          <TextField fx:id="lastNameMyAccountTextField" layoutX="159.0" layoutY="146.0" />
+                                          <Text layoutX="75.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name:" />
+                                          <Text layoutX="78.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username:" />
+                                          <TextField fx:id="userNameMyAccountTextField" layoutX="159.0" layoutY="204.0" />
+                                          <Text layoutX="55.0" layoutY="385.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New Password:" />
+                                          <TextField fx:id="newPasswordMyAccountTextField" layoutX="159.0" layoutY="368.0" />
+                                          <Text layoutX="45.0" layoutY="440.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Confirm Password:" />
+                                          <TextField fx:id="currentPasswordMyAccountTextField" layoutX="159.0" layoutY="423.0" />
+                                          <Text layoutX="89.0" layoutY="277.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email:" />
+                                          <TextField fx:id="emailMyAccountTextField" layoutX="159.0" layoutY="260.0" />
+                                          <Text layoutX="93.0" layoutY="332.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Role:" />
+                                          <TextField fx:id="roleMyAccountTextField" layoutX="159.0" layoutY="315.0" />
+                                       </children>
+                                    </Pane>
+                                 </center>
+                                 <top>
+                                    <HBox prefHeight="29.0" prefWidth="1117.0" BorderPane.alignment="CENTER" />
+                                 </top>
+                              </BorderPane>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+               </tabs>
+            </TabPane>
+            <HBox alignment="TOP_RIGHT" prefHeight="30.0" prefWidth="142.0" spacing="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+               <children>
+                  <Text fx:id="userText" strokeType="OUTSIDE" strokeWidth="0.0" text="First Last" />
+                  <Button fx:id="logoutButton" mnemonicParsing="false" text="Logout" onAction="#onlogoutButtonPressed"/>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

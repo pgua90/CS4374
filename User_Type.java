@@ -1,3 +1,0 @@
-	enum User_Type{
-		ADMIN, SYS_ADMIN, MANAGER, STUDENT
-	}

@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="754.0" prefWidth="1117.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CSWT.controllers.ManagerController">
+   <center>
+      <AnchorPane BorderPane.alignment="TOP_CENTER">
+         <children>
+            <TabPane prefHeight="781.0" prefWidth="1117.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="5.0">
+               <tabs>
+                  <Tab fx:id="ticketTab" text="Tickets">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="673.0" prefWidth="1117.0">
+                           <children>
+                              <BorderPane layoutX="138.0" layoutY="101.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <center>
+                                    <Pane fx:id="ticketDescriptionPane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Label layoutX="41.0" layoutY="9.0" text="Ticket Information">
+                                             <font>
+                                                <Font name="System Bold" size="42.0" />
+                                             </font></Label>
+                                          <Label layoutX="85.0" layoutY="91.0" text="Title:" />
+                                          <Label layoutX="53.0" layoutY="149.0" text="Description:" />
+                                          <Label layoutX="55.0" layoutY="322.0" text="Resolution:" />
+                                          <Label layoutX="477.0" layoutY="35.0" text="Status: " />
+                                          <Label layoutX="474.0" layoutY="120.0" text="Severity:" />
+                                          <Label layoutX="476.0" layoutY="171.0" text="Priority:" />
+                                          <Label layoutX="480.0" layoutY="221.0" text="Client:" />
+                                          <Label layoutX="446.0" layoutY="271.0" text="Assigned To:" />
+                                          <Label layoutX="452.0" layoutY="322.0" text="Open Date:" />
+                                          <Label layoutX="451.0" layoutY="376.0" text="Time Worked:" />
+                                          <Label layoutX="447.0" layoutY="426.0" text="Closed Date:" />
+                                          <Button fx:id="closeTicketViewButton" layoutX="41.0" layoutY="525.0" mnemonicParsing="false" onAction="#oncloseTicketViewButtonPressed" text="Close" />
+                                          <Button fx:id="clearTicketViewButton" layoutX="497.0" layoutY="525.0" mnemonicParsing="false" onAction="#onclearTicketViewButtonPressed" text="Clear" />
+                                          <Button fx:id="resolvedTicketViewButton" layoutX="586.0" layoutY="525.0" mnemonicParsing="false" onAction="#onresolvedTicketViewButtonPressed" text="Resolved" />
+                                          <Button fx:id="rejectTicketViewButton" layoutX="689.0" layoutY="525.0" mnemonicParsing="false" onAction="#onrejectTicketViewButtonPressed" text="Reject" />
+                                          <Button fx:id="saveTicketViewButton" layoutX="779.0" layoutY="525.0" mnemonicParsing="false" onAction="#onsaveTicketViewButtonPressed" text="Save" />
+                                          <ComboBox fx:id="assignedToTicketViewComboBox" layoutX="552.0" layoutY="268.0" prefWidth="150.0" promptText="Select User" />
+                                          <TextField fx:id="clientTicketViewTextField" layoutX="553.0" layoutY="218.0" promptText="Client" />
+                                          <TextField fx:id="timeWorkedTicketViewTextField" layoutX="555.0" layoutY="373.0" promptText="Enter time worked" />
+                                          <TextField fx:id="titleTicketViewTextField" layoutX="139.0" layoutY="88.0" />
+                                          <TextArea fx:id="descriptionTicketViewTextArea" layoutX="126.0" layoutY="150.0" prefHeight="143.0" prefWidth="200.0" />
+                                          <TextArea fx:id="resolutionTicketViewTextArea" layoutX="126.0" layoutY="326.0" prefHeight="144.0" prefWidth="200.0" />
+                                          <ComboBox fx:id="statusTicketViewComboBox" layoutX="552.0" layoutY="31.0" prefWidth="150.0" promptText="Select Status" />
+                                          <ComboBox fx:id="priorityTicketViewComboBox" layoutX="552.0" layoutY="167.0" prefWidth="150.0" promptText="Select Priority" />
+                                          <DatePicker fx:id="closedTicketViewLabel" layoutX="542.0" layoutY="422.0" />
+                                          <DatePicker fx:id="openDateTicketViewLabel" layoutX="540.0" layoutY="318.0" />
+                                          <TableView fx:id="ticketResolutionUpdateTicketViewTableView" layoutX="724.0" layoutY="14.0" prefHeight="444.0" prefWidth="200.0">
+                                             <columns>
+                                                <TableColumn prefWidth="75.0" text="C1" />
+                                                <TableColumn prefWidth="113.0" text="C2" />
+                                             </columns>
+                                          </TableView>
+                                          <Text fx:id="messageTicketViewLabel" layoutX="6.0" layoutY="574.0" text="This is a sample message." />
+                                          <Label layoutX="433.0" layoutY="80.0" text="Support Category:" />
+                                          <Label fx:id="supportCategoryTicketViewLabel" layoutX="557.0" layoutY="80.0" text="&lt;Support Category Label&gt;" />
+                                          <Label fx:id="severityTicketViewLabel" layoutX="552.0" layoutY="120.0" text="&lt;Severity Label&gt;" />
+                                       </children>
+                                    </Pane>
+                                 </center>
+                                 <left>
+                                    <ListView fx:id="ticketListView" onMouseClicked="#onListViewClicked" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+                                 </left>
+                                 <top>
+                                    <VBox spacing="10.0" style="-fx-background-color: #E0E0E0#E0E0E0;" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <HBox alignment="CENTER" prefHeight="29.0" prefWidth="1117.0" spacing="10.0">
+                                             <children>
+                                                <VBox layoutX="10.0" layoutY="10.0">
+                                                   <children>
+                                                      <Label text="Title" />
+                                                      <TextField fx:id="titleTicketSearchTextField" minWidth="92.0" prefHeight="25.0" prefWidth="92.0" promptText="Search title" />
+                                                   </children>
+                                                </VBox>
+                                                <Separator layoutX="1002.0" layoutY="10.0" orientation="VERTICAL" prefHeight="200.0" />
+                                                <VBox layoutX="10.0" layoutY="10.0">
+                                                   <children>
+                                                      <Label text="Description" />
+                                                      <TextField fx:id="descriptionTicketSearchTextField" minWidth="100.0" prefHeight="25.0" prefWidth="133.0" promptText="Search description" />
+                                                   </children>
+                                                </VBox>
+                                                <Separator layoutX="1018.0" layoutY="10.0" orientation="VERTICAL" prefHeight="200.0" />
+                                                <VBox layoutX="191.0" layoutY="10.0">
+                                                   <children>
+                                                      <Label text="Resolution" />
+                                                      <TextField fx:id="resolutionTicketSearchTextField" minWidth="100.0" prefHeight="25.0" prefWidth="124.0" promptText="Search resolution" />
+                                                   </children>
+                                                </VBox>
+                                                <Separator layoutX="1034.0" layoutY="10.0" orientation="VERTICAL" prefHeight="200.0" />
+                                                <VBox>
+                                                   <children>
+                                                      <Label text="Priority" />
+                                                      <ComboBox fx:id="priorityTicketSearchComboBox" prefHeight="25.0" prefWidth="130.0" promptText="Priority" />
+                                                   </children>
+                                                </VBox>
+                                                <Separator layoutX="1050.0" layoutY="10.0" orientation="VERTICAL" prefHeight="200.0" />
+                                                <VBox layoutX="542.0" layoutY="10.0">
+                                                   <children>
+                                                      <Label text="Severity" />
+                                                      <ComboBox fx:id="severityTicketSearchComboBox" prefHeight="25.0" prefWidth="122.0" promptText="Severity" />
+                                                   </children>
+                                                </VBox>
+                                                <Separator layoutX="746.0" layoutY="10.0" orientation="VERTICAL" prefHeight="200.0" />
+                                                <VBox layoutX="702.0" layoutY="10.0">
+                                                   <children>
+                                                      <Label text="Status" />
+                                                      <ComboBox fx:id="statusTicketSearchComboBox" prefHeight="25.0" prefWidth="97.0" promptText="Status" />
+                                                   </children>
+                                                </VBox>
+                                                <Separator orientation="VERTICAL" prefHeight="200.0" />
+                                                <Button fx:id="searchTicketSearchButton" alignment="CENTER" mnemonicParsing="false" onAction="#onsearchTicketSearchButtonPressed" prefHeight="25.0" prefWidth="75.0" text="Search" textAlignment="CENTER" />
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets bottom="5.0" left="10.0" right="10.0" top="10.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox layoutX="10.0" layoutY="10.0" prefHeight="29.0" prefWidth="1117.0" spacing="10.0">
+                                             <children>
+                                                <VBox fillWidth="false" prefHeight="200.0" prefWidth="100.0">
+                                                   <children>
+                                                      <Label text="Close date range" />
+                                                      <HBox spacing="10.0">
+                                                         <children>
+                                                            <Label minWidth="30.0" text="From" />
+                                                            <DatePicker fx:id="fromCloseDateTicketSearchDatePicker" minWidth="120.0" promptText="Select date" />
+                                                            <Label layoutX="10.0" layoutY="10.0" minWidth="20.0" text="To" HBox.hgrow="ALWAYS" />
+                                                            <DatePicker fx:id="toCloseDateTicketSearchDatePicker" layoutX="20.0" layoutY="10.0" minWidth="120.0" promptText="Select date" />
+                                                         </children>
+                                                      </HBox>
+                                                   </children>
+                                                </VBox>
+                                                <Separator orientation="VERTICAL" prefHeight="200.0" />
+                                                <VBox layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="100.0">
+                                                   <children>
+                                                      <Label text="Open date range" />
+                                                      <HBox spacing="10.0">
+                                                         <children>
+                                                            <Label minWidth="30.0" text="From" />
+                                                            <DatePicker fx:id="fromOpenDateTicketSearchDatePicker" minWidth="120.0" promptText="Select date" />
+                                                            <Label layoutX="10.0" layoutY="10.0" minWidth="20.0" text="To" HBox.hgrow="ALWAYS" />
+                                                            <DatePicker fx:id="toOpenDateTicketSearchDatePicker" layoutX="20.0" layoutY="10.0" minWidth="120.0" promptText="Select date" />
+                                                         </children>
+                                                      </HBox>
+                                                   </children>
+                                                </VBox>
+                                                <Separator layoutX="300.0" layoutY="10.0" orientation="VERTICAL" prefHeight="200.0" />
+                                                <VBox>
+                                                   <children>
+                                                      <Label text="Assigned to" />
+                                                      <ComboBox fx:id="assignedToTicketSearchComboBox" prefHeight="25.0" prefWidth="90.0" promptText="User" />
+                                                   </children>
+                                                </VBox>
+                                                <Separator layoutX="1086.0" layoutY="10.0" orientation="VERTICAL" prefHeight="200.0" />
+                                                <VBox>
+                                                   <children>
+                                                      <Label text="Client" />
+                                                      <ComboBox fx:id="clientTicketSearchComboBox" prefHeight="25.0" prefWidth="99.0" promptText="Client" />
+                                                   </children>
+                                                </VBox>
+                                                <Separator layoutX="1102.0" layoutY="10.0" orientation="VERTICAL" prefHeight="200.0" />
+                                                <VBox>
+                                                   <children>
+                                                      <Label text="Support Category" />
+                                                      <ComboBox fx:id="supportCategoryTicketSearchComboBox" prefWidth="150.0" promptText="Support Category" />
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets bottom="10.0" left="10.0" right="10.0" top="5.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                 </top>
+                              </BorderPane>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab text="Reports">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="673.0" prefWidth="1117.0">
+                           <children>
+                              <BorderPane layoutX="138.0" layoutY="101.0" prefHeight="672.0" prefWidth="1117.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <center>
+                                    <Pane fx:id="ticketDescriptionPane2111" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Label layoutX="41.0" layoutY="85.0" text="Date:" />
+                                          <Label layoutX="37.0" layoutY="150.0" text="Description:" />
+                                          <Button fx:id="clearButton1111" layoutX="815.0" layoutY="602.0" mnemonicParsing="false" text="Delete" />
+                                          <Button fx:id="saveButton1111" layoutX="35.0" layoutY="602.0" mnemonicParsing="false" text="Save" />
+                                          <TextField layoutX="126.0" layoutY="31.0" />
+                                          <TextArea layoutX="126.0" layoutY="159.0" prefHeight="285.0" prefWidth="499.0" />
+                                          <DatePicker layoutX="126.0" layoutY="81.0" minWidth="120.0" />
+                                          <Label layoutX="43.0" layoutY="35.0" text="Report Title:" />
+                                       </children>
+                                    </Pane>
+                                 </center>
+                                 <left>
+                                    <ListView fx:id="ticketListView2111" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+                                 </left>
+                                 <top>
+                                    <HBox prefHeight="29.0" prefWidth="1117.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <TextField fx:id="srchBar2111" promptText="Search Reports">
+                                             <HBox.margin>
+                                                <Insets right="20.0" />
+                                             </HBox.margin>
+                                          </TextField>
+                                       </children>
+                                    </HBox>
+                                 </top>
+                              </BorderPane>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab fx:id="ticketTab1" text="My Account">
+                     <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="673.0" prefWidth="1117.0">
+                           <children>
+                              <BorderPane layoutX="138.0" layoutY="101.0" prefHeight="672.0" prefWidth="1117.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                 <center>
+                                    <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                                       <children>
+                                          <Button fx:id="saveMyAccountButton" layoutX="956.0" layoutY="597.0" mnemonicParsing="false" onAction="#onsaveMyAccountButtonPressed" prefHeight="25.0" prefWidth="81.0" text="Save" />
+                                          <Label layoutX="76.0" layoutY="94.0" text="First Name:" />
+                                          <Text fx:id="myAccountLabel" layoutX="463.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="My Account">
+                                             <font>
+                                                <Font size="36.0" />
+                                             </font>
+                                          </Text>
+                                          <Text layoutX="75.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Last Name:" />
+                                          <Text layoutX="78.0" layoutY="221.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username:" />
+                                          <Text layoutX="55.0" layoutY="385.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New Password:" />
+                                          <TextField fx:id="newPasswordMyAccountTextField" layoutX="159.0" layoutY="368.0" />
+                                          <Text layoutX="45.0" layoutY="440.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Confirm Password:" />
+                                          <TextField fx:id="currentPasswordMyAccountTextField" layoutX="159.0" layoutY="423.0" />
+                                          <Text layoutX="89.0" layoutY="277.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email:" />
+                                          <Text layoutX="93.0" layoutY="332.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Role:" />
+                                          <Label fx:id="firstNameMyAccountLabel" layoutX="190.0" layoutY="94.0" text="&lt;first name&gt;" />
+                                          <Label fx:id="lastNameMyAccountLabel" layoutX="191.0" layoutY="150.0" text="&lt;last name&gt;" />
+                                          <Label fx:id="usernameMyAccountLabel" layoutX="190.0" layoutY="208.0" text="&lt;username&gt;" />
+                                          <Label fx:id="emailMyAccountLabel" layoutX="190.0" layoutY="264.0" text="&lt;email&gt;" />
+                                          <Label fx:id="roleMyAccountLabel" layoutX="194.0" layoutY="319.0" text="&lt;role&gt;" />
+                                       </children>
+                                    </Pane>
+                                 </center>
+                                 <top>
+                                    <HBox prefHeight="29.0" prefWidth="1117.0" BorderPane.alignment="CENTER" />
+                                 </top>
+                              </BorderPane>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+               </tabs>
+            </TabPane>
+            <HBox alignment="TOP_RIGHT" prefHeight="41.0" prefWidth="200.0" spacing="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0">
+               <children>
+                  <Text fx:id="userText" strokeType="OUTSIDE" strokeWidth="0.0" text="First Last" />
+                  <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#onlogoutButtonPressed" text="Logout" />
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
